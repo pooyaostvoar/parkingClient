@@ -1,0 +1,48 @@
+import RegForm from './app/components/RegForm'
+import React from 'react';
+import { View, Text } from 'react-native';
+import { createStackNavigator, StackNavigator } from 'react-navigation';
+import {Tabs} from './app/config/router'
+import Home from './app/components/Home'
+import Login from './app/components/Login'
+
+/*class App extends React.Component {
+  render() {
+    return RootStack;
+  }
+}*/
+
+const RootStack = createStackNavigator(
+  {
+    HomeScreen: Home,
+    LoginScreen: Login,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+/*export default App;*/
+
+export default class App extends React.Component {
+  render() {
+    return <RootStack />;
+  }
+}
+  /*
+export default createStackNavigator({
+  Home: {
+    screen: HomeScreen
+  },
+  
+});
+const styles = StyleSheet.create({
+  container: {
+      flex:1,
+      justifyContent: 'center',
+      backgroundColor:'#36485f',
+      paddingLeft:50,
+      paddingRight:50, 
+  },
+});
+*/
